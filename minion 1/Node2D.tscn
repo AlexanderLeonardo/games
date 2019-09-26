@@ -1,0 +1,277 @@
+[gd_scene load_steps=30 format=2]
+
+[ext_resource path="res://KinematicBody2D.gd" type="Script" id=1]
+[ext_resource path="res://players/PNG/Players/bunny1_stand.png" type="Texture" id=2]
+[ext_resource path="res://players/PNG/Environment/ground_grass.png" type="Texture" id=3]
+[ext_resource path="res://assets/Background/bg_layer3.png" type="Texture" id=4]
+[ext_resource path="res://game_ui.gd" type="Script" id=5]
+[ext_resource path="res://theme/demo_theme.tres" type="Theme" id=6]
+[ext_resource path="res://theme/font_label_medium.tres" type="DynamicFont" id=7]
+[ext_resource path="res://carrot.gd" type="Script" id=8]
+[ext_resource path="res://players/PNG/Items/carrot.png" type="Texture" id=9]
+[ext_resource path="res://players/PNG/Environment/ground_sand.png" type="Texture" id=10]
+[ext_resource path="res://carrot_gold_1.gd" type="Script" id=11]
+[ext_resource path="res://players/PNG/Items/carrot_gold.png" type="Texture" id=12]
+[ext_resource path="res://Area2D.gd" type="Script" id=13]
+[ext_resource path="res://players/PNG/Items/bronze_2.png" type="Texture" id=14]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 85.6353
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 191.659, 50.1379 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 188.188, 43.7133 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 191.804, 50.1381 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 192.533, 45.3829 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 194.69, 47.253 )
+
+[sub_resource type="CircleShape2D" id=7]
+radius = 53.7396
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 186.617, 53.5669 )
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 188.139, 44.8164 )
+
+[sub_resource type="CircleShape2D" id=10]
+radius = 69.1029
+
+[sub_resource type="RectangleShape2D" id=11]
+extents = Vector2( 191.392, 48.1694 )
+
+[sub_resource type="CircleShape2D" id=12]
+radius = 61.7724
+
+[sub_resource type="CircleShape2D" id=13]
+radius = 68.4238
+
+[sub_resource type="RectangleShape2D" id=14]
+extents = Vector2( 190.069, 48.0948 )
+
+[sub_resource type="RectangleShape2D" id=15]
+extents = Vector2( 194.817, 48.7002 )
+
+[node name="Node2D" type="Node2D"]
+position = Vector2( 13.6992, 37.6728 )
+
+[node name="Player" type="KinematicBody2D" parent="."]
+position = Vector2( -20.7703, 0.496521 )
+script = ExtResource( 1 )
+
+[node name="bunny1_stand" type="Sprite" parent="Player"]
+position = Vector2( 544.558, 247.82 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2( 547.968, 246.585 )
+shape = SubResource( 1 )
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2( -1400.33, -1792.04 )
+anchor_mode = 0
+current = true
+zoom = Vector2( 4, 4 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+editor/display_folded = true
+position = Vector2( 332.206, 482.897 )
+
+[node name="ground_grass" type="Sprite" parent="StaticBody2D"]
+position = Vector2( 181.53, 32.0573 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 181.514, 30.8232 )
+shape = SubResource( 2 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+editor/display_folded = true
+position = Vector2( 147.266, 215.762 )
+
+[node name="ground_grass" type="Sprite" parent="StaticBody2D2"]
+position = Vector2( 54.812, 1.23407 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2( 54.7968, -1.58685 )
+shape = SubResource( 3 )
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+editor/display_folded = true
+position = Vector2( 681.535, 85.62 )
+
+[node name="ground_grass" type="Sprite" parent="StaticBody2D3"]
+position = Vector2( 280.758, 25.9757 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2( 283.05, 24.7418 )
+shape = SubResource( 4 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+editor/display_folded = true
+
+[node name="bg_layer3" type="Sprite" parent="ParallaxBackground"]
+position = Vector2( 470.57, 162.663 )
+scale = Vector2( 0.513964, 0.443612 )
+texture = ExtResource( 4 )
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+editor/display_folded = true
+
+[node name="ground_grass" type="Sprite" parent="StaticBody2D4"]
+position = Vector2( 69.8899, -228.736 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
+position = Vector2( 65.5479, -229.633 )
+shape = SubResource( 5 )
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="game_ui" type="Control" parent="UI"]
+margin_left = -90.0406
+margin_top = -100.774
+margin_right = 92.96
+margin_bottom = -36.774
+mouse_filter = 2
+script = ExtResource( 5 )
+
+[node name="score" type="Label" parent="UI/game_ui"]
+margin_left = 137.0
+margin_top = 107.0
+margin_right = 237.0
+margin_bottom = 193.0
+theme = ExtResource( 6 )
+custom_fonts/font = ExtResource( 7 )
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="."]
+editor/display_folded = true
+
+[node name="ground_grass" type="Sprite" parent="StaticBody2D5"]
+position = Vector2( 864.332, -411.332 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5"]
+position = Vector2( 865.036, -412.257 )
+shape = SubResource( 6 )
+
+[node name="carrot1" type="Area2D" parent="."]
+editor/display_folded = true
+position = Vector2( 218.066, 109.033 )
+script = ExtResource( 8 )
+
+[node name="carrot" type="Sprite" parent="carrot1"]
+position = Vector2( 4.59377, -4.33556 )
+scale = Vector2( 1.83028, 1.63011 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="carrot1"]
+position = Vector2( 35.5087, 10.3587 )
+shape = SubResource( 7 )
+
+[node name="StaticBody2D6" type="StaticBody2D" parent="."]
+editor/display_folded = true
+
+[node name="ground_grass" type="Sprite" parent="StaticBody2D6"]
+position = Vector2( 412.379, -872.472 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D6"]
+position = Vector2( 407.911, -868.237 )
+shape = SubResource( 8 )
+
+[node name="StaticBody2D7" type="StaticBody2D" parent="."]
+editor/display_folded = true
+
+[node name="ground_grass" type="Sprite" parent="StaticBody2D7"]
+position = Vector2( 1086.72, -1207.34 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D7"]
+position = Vector2( 1086.4, -1209.37 )
+shape = SubResource( 9 )
+
+[node name="carrot2" type="Area2D" parent="."]
+editor/display_folded = true
+script = ExtResource( 8 )
+
+[node name="carrot" type="Sprite" parent="carrot2"]
+position = Vector2( 867.051, -535.016 )
+scale = Vector2( 1.26916, 1.28326 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="carrot2"]
+position = Vector2( 876.96, -533.354 )
+shape = SubResource( 10 )
+
+[node name="StaticBody2D8" type="StaticBody2D" parent="."]
+editor/display_folded = true
+
+[node name="ground_sand" type="Sprite" parent="StaticBody2D8"]
+position = Vector2( 373.119, -1615.86 )
+texture = ExtResource( 10 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D8"]
+position = Vector2( 373.293, -1619.34 )
+shape = SubResource( 11 )
+
+[node name="carrot_gold_1" type="Area2D" parent="."]
+editor/display_folded = true
+script = ExtResource( 11 )
+
+[node name="carrot_gold" type="Sprite" parent="carrot_gold_1"]
+position = Vector2( 367.702, -1725.59 )
+scale = Vector2( 1.25122, 1.30147 )
+texture = ExtResource( 12 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="carrot_gold_1"]
+position = Vector2( 375.193, -1729.6 )
+shape = SubResource( 12 )
+
+[node name="bronze_1" type="Area2D" parent="."]
+editor/display_folded = true
+script = ExtResource( 13 )
+
+[node name="bronze_2" type="Sprite" parent="bronze_1"]
+position = Vector2( 1093.47, -1317.06 )
+scale = Vector2( 1.57765, 1.31222 )
+texture = ExtResource( 14 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bronze_1"]
+position = Vector2( 1092.57, -1314.83 )
+shape = SubResource( 13 )
+
+[node name="StaticBody2D9" type="StaticBody2D" parent="."]
+editor/display_folded = true
+
+[node name="ground_sand" type="Sprite" parent="StaticBody2D9"]
+position = Vector2( -231.221, -2013.5 )
+texture = ExtResource( 10 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D9"]
+position = Vector2( -231.692, -2012.8 )
+shape = SubResource( 14 )
+
+[node name="StaticBody2D10" type="StaticBody2D" parent="."]
+
+[node name="ground_sand" type="Sprite" parent="StaticBody2D10"]
+position = Vector2( 690.776, -2370.29 )
+texture = ExtResource( 10 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D10"]
+position = Vector2( 688.074, -2368.73 )
+shape = SubResource( 15 )
+[connection signal="body_entered" from="carrot1" to="carrot1" method="_on_carrot_body_entered"]
+[connection signal="body_entered" from="carrot2" to="carrot2" method="_on_carrot_body_entered"]
+[connection signal="body_entered" from="carrot_gold_1" to="carrot_gold_1" method="_on_carrot_gold_body_entered"]
+[connection signal="body_entered" from="bronze_1" to="bronze_1" method="_on_bronze_1_body_entered"]

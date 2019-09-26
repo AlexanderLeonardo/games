@@ -1,0 +1,35 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://players/PNG/Players/bunny1_ready.png" type="Texture" id=1]
+[ext_resource path="res://bunny1_ready.gd" type="Script" id=2]
+[ext_resource path="res://CollisionShape2D.gd" type="Script" id=3]
+[ext_resource path="res://players/PNG/Environment/ground_grass.png" type="Texture" id=4]
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 85.7399
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 73.8509
+height = 82.8241
+
+[node name="ground_grass" type="KinematicBody2D"]
+position = Vector2( 508.678, 265.277 )
+
+[node name="bunny1_ready" type="Sprite" parent="."]
+position = Vector2( 10.7992, -47.004 )
+texture = ExtResource( 1 )
+script = ExtResource( 2 )
+
+[node name="KinematicBody2D" type="KinematicBody2D" parent="bunny1_ready"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bunny1_ready/KinematicBody2D"]
+shape = SubResource( 2 )
+script = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 10.0474, -56.3423 )
+shape = SubResource( 1 )
+
+[node name="ground_grass" type="Sprite" parent="."]
+position = Vector2( 13.2233, 96.7667 )
+texture = ExtResource( 4 )
