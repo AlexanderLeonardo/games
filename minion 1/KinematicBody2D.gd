@@ -49,3 +49,7 @@ func _physics_process(delta):
 	vel.y += acc.y 
 	vel.x = clamp(vel.x, -MAX_SPEED, MAX_SPEED)
 	vel = move_and_slide(vel, Vector2.UP)
+
+func _on_VisibilityNotifier2D_screen_exited():
+	global.game_over()
+	print("Game Over!!!!")

@@ -1,28 +1,39 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=54 format=2]
 
 [ext_resource path="res://KinematicBody2D.gd" type="Script" id=1]
 [ext_resource path="res://players/PNG/Players/bunny1_stand.png" type="Texture" id=2]
 [ext_resource path="res://players/PNG/Environment/ground_grass.png" type="Texture" id=3]
-[ext_resource path="res://assets/Background/bg_layer3.png" type="Texture" id=4]
-[ext_resource path="res://game_ui.gd" type="Script" id=5]
-[ext_resource path="res://theme/demo_theme.tres" type="Theme" id=6]
-[ext_resource path="res://theme/font_label_medium.tres" type="DynamicFont" id=7]
-[ext_resource path="res://carrot.gd" type="Script" id=8]
-[ext_resource path="res://players/PNG/Items/carrot.png" type="Texture" id=9]
-[ext_resource path="res://players/PNG/Environment/ground_sand.png" type="Texture" id=10]
-[ext_resource path="res://carrot_gold_1.gd" type="Script" id=11]
-[ext_resource path="res://players/PNG/Items/carrot_gold.png" type="Texture" id=12]
-[ext_resource path="res://Area2D.gd" type="Script" id=13]
-[ext_resource path="res://players/PNG/Items/bronze_2.png" type="Texture" id=14]
+[ext_resource path="res://platform.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/Background/bg_layer3.png" type="Texture" id=5]
+[ext_resource path="res://game_ui.gd" type="Script" id=6]
+[ext_resource path="res://theme/demo_theme.tres" type="Theme" id=7]
+[ext_resource path="res://theme/font_label_medium.tres" type="DynamicFont" id=8]
+[ext_resource path="res://carrot.gd" type="Script" id=9]
+[ext_resource path="res://players/PNG/Items/carrot.png" type="Texture" id=10]
+[ext_resource path="res://players/PNG/Environment/ground_sand.png" type="Texture" id=11]
+[ext_resource path="res://carrot_gold_1.gd" type="Script" id=12]
+[ext_resource path="res://players/PNG/Items/carrot_gold.png" type="Texture" id=13]
+[ext_resource path="res://Area2D.gd" type="Script" id=14]
+[ext_resource path="res://players/PNG/Items/bronze_2.png" type="Texture" id=15]
+[ext_resource path="res://RigidBody2D.gd" type="Script" id=16]
+[ext_resource path="res://players/PNG/Enemies/springMan_stand.png" type="Texture" id=17]
+[ext_resource path="res://players/PNG/Environment/ground_cake.png" type="Texture" id=18]
+[ext_resource path="res://enemie2.gd" type="Script" id=19]
+[ext_resource path="res://players/PNG/Enemies/flyMan_still_fly.png" type="Texture" id=20]
+[ext_resource path="res://players/PNG/Enemies/sun1.png" type="Texture" id=21]
+[ext_resource path="res://players/PNG/Environment/ground_snow_broken.png" type="Texture" id=22]
+[ext_resource path="res://gold.gd" type="Script" id=23]
+[ext_resource path="res://players/PNG/Items/gold_2.png" type="Texture" id=24]
+[ext_resource path="res://players/PNG/Environment/ground_wood_broken.png" type="Texture" id=25]
+[ext_resource path="res://enemie3.gd" type="Script" id=26]
+[ext_resource path="res://players/PNG/Enemies/spikeMan_stand.png" type="Texture" id=27]
+[ext_resource path="res://carrot3.gd" type="Script" id=28]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 85.6353
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 191.659, 50.1379 )
-
-[sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 188.188, 43.7133 )
 
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 191.804, 50.1381 )
@@ -37,7 +48,7 @@ extents = Vector2( 194.69, 47.253 )
 radius = 53.7396
 
 [sub_resource type="RectangleShape2D" id=8]
-extents = Vector2( 186.617, 53.5669 )
+extents = Vector2( 191.482, 46.8206 )
 
 [sub_resource type="RectangleShape2D" id=9]
 extents = Vector2( 188.139, 44.8164 )
@@ -60,26 +71,60 @@ extents = Vector2( 190.069, 48.0948 )
 [sub_resource type="RectangleShape2D" id=15]
 extents = Vector2( 194.817, 48.7002 )
 
+[sub_resource type="CircleShape2D" id=16]
+radius = 64.8057
+
+[sub_resource type="RectangleShape2D" id=17]
+extents = Vector2( 190.663, 45.8149 )
+
+[sub_resource type="RectangleShape2D" id=18]
+extents = Vector2( 194.242, 46.5203 )
+
+[sub_resource type="CircleShape2D" id=19]
+radius = 68.259
+
+[sub_resource type="CircleShape2D" id=20]
+radius = 120.781
+
+[sub_resource type="RectangleShape2D" id=21]
+extents = Vector2( 192.887, 48.9304 )
+
+[sub_resource type="CircleShape2D" id=22]
+radius = 64.3952
+
+[sub_resource type="RectangleShape2D" id=23]
+extents = Vector2( 191.241, 51.3047 )
+
+[sub_resource type="CircleShape2D" id=24]
+radius = 75.8892
+
+[sub_resource type="RectangleShape2D" id=25]
+extents = Vector2( 194.036, 49.6455 )
+
+[sub_resource type="CircleShape2D" id=26]
+radius = 93.2618
+
 [node name="Node2D" type="Node2D"]
 position = Vector2( 13.6992, 37.6728 )
 
 [node name="Player" type="KinematicBody2D" parent="."]
-position = Vector2( -20.7703, 0.496521 )
+editor/display_folded = true
+position = Vector2( -20.77, -1791.54 )
 script = ExtResource( 1 )
 
-[node name="bunny1_stand" type="Sprite" parent="Player"]
-position = Vector2( 544.558, 247.82 )
-texture = ExtResource( 2 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-position = Vector2( 547.968, 246.585 )
-shape = SubResource( 1 )
-
 [node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2( -1400.33, -1792.04 )
+position = Vector2( -1400.33, 0 )
 anchor_mode = 0
 current = true
 zoom = Vector2( 4, 4 )
+
+[node name="bunny1_stand" type="Sprite" parent="Player"]
+position = Vector2( 542.452, 2144.04 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2( 535.234, 2146.04 )
+shape = SubResource( 1 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 editor/display_folded = true
@@ -93,17 +138,7 @@ texture = ExtResource( 3 )
 position = Vector2( 181.514, 30.8232 )
 shape = SubResource( 2 )
 
-[node name="StaticBody2D2" type="StaticBody2D" parent="."]
-editor/display_folded = true
-position = Vector2( 147.266, 215.762 )
-
-[node name="ground_grass" type="Sprite" parent="StaticBody2D2"]
-position = Vector2( 54.812, 1.23407 )
-texture = ExtResource( 3 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
-position = Vector2( 54.7968, -1.58685 )
-shape = SubResource( 3 )
+[node name="StaticBody2D2" parent="." instance=ExtResource( 4 )]
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="."]
 editor/display_folded = true
@@ -116,6 +151,7 @@ texture = ExtResource( 3 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
 position = Vector2( 283.05, 24.7418 )
 shape = SubResource( 4 )
+one_way_collision = true
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 editor/display_folded = true
@@ -123,7 +159,7 @@ editor/display_folded = true
 [node name="bg_layer3" type="Sprite" parent="ParallaxBackground"]
 position = Vector2( 470.57, 162.663 )
 scale = Vector2( 0.513964, 0.443612 )
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="."]
 editor/display_folded = true
@@ -135,6 +171,7 @@ texture = ExtResource( 3 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
 position = Vector2( 65.5479, -229.633 )
 shape = SubResource( 5 )
+one_way_collision = true
 
 [node name="UI" type="CanvasLayer" parent="."]
 
@@ -144,18 +181,17 @@ margin_top = -100.774
 margin_right = 92.96
 margin_bottom = -36.774
 mouse_filter = 2
-script = ExtResource( 5 )
+script = ExtResource( 6 )
 
 [node name="score" type="Label" parent="UI/game_ui"]
 margin_left = 137.0
 margin_top = 107.0
 margin_right = 237.0
 margin_bottom = 193.0
-theme = ExtResource( 6 )
-custom_fonts/font = ExtResource( 7 )
+theme = ExtResource( 7 )
+custom_fonts/font = ExtResource( 8 )
 
 [node name="StaticBody2D5" type="StaticBody2D" parent="."]
-editor/display_folded = true
 
 [node name="ground_grass" type="Sprite" parent="StaticBody2D5"]
 position = Vector2( 864.332, -411.332 )
@@ -164,34 +200,34 @@ texture = ExtResource( 3 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5"]
 position = Vector2( 865.036, -412.257 )
 shape = SubResource( 6 )
+one_way_collision = true
 
 [node name="carrot1" type="Area2D" parent="."]
 editor/display_folded = true
 position = Vector2( 218.066, 109.033 )
-script = ExtResource( 8 )
+script = ExtResource( 9 )
 
 [node name="carrot" type="Sprite" parent="carrot1"]
 position = Vector2( 4.59377, -4.33556 )
 scale = Vector2( 1.83028, 1.63011 )
-texture = ExtResource( 9 )
+texture = ExtResource( 10 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="carrot1"]
 position = Vector2( 35.5087, 10.3587 )
 shape = SubResource( 7 )
 
 [node name="StaticBody2D6" type="StaticBody2D" parent="."]
-editor/display_folded = true
 
 [node name="ground_grass" type="Sprite" parent="StaticBody2D6"]
-position = Vector2( 412.379, -872.472 )
+position = Vector2( 495.888, -899.195 )
 texture = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D6"]
-position = Vector2( 407.911, -868.237 )
+position = Vector2( 494.306, -902.362 )
 shape = SubResource( 8 )
+one_way_collision = true
 
 [node name="StaticBody2D7" type="StaticBody2D" parent="."]
-editor/display_folded = true
 
 [node name="ground_grass" type="Sprite" parent="StaticBody2D7"]
 position = Vector2( 1086.72, -1207.34 )
@@ -200,39 +236,40 @@ texture = ExtResource( 3 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D7"]
 position = Vector2( 1086.4, -1209.37 )
 shape = SubResource( 9 )
+one_way_collision = true
 
 [node name="carrot2" type="Area2D" parent="."]
 editor/display_folded = true
-script = ExtResource( 8 )
+script = ExtResource( 9 )
 
 [node name="carrot" type="Sprite" parent="carrot2"]
 position = Vector2( 867.051, -535.016 )
 scale = Vector2( 1.26916, 1.28326 )
-texture = ExtResource( 9 )
+texture = ExtResource( 10 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="carrot2"]
 position = Vector2( 876.96, -533.354 )
 shape = SubResource( 10 )
 
 [node name="StaticBody2D8" type="StaticBody2D" parent="."]
-editor/display_folded = true
 
 [node name="ground_sand" type="Sprite" parent="StaticBody2D8"]
 position = Vector2( 373.119, -1615.86 )
-texture = ExtResource( 10 )
+texture = ExtResource( 11 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D8"]
 position = Vector2( 373.293, -1619.34 )
 shape = SubResource( 11 )
+one_way_collision = true
 
 [node name="carrot_gold_1" type="Area2D" parent="."]
 editor/display_folded = true
-script = ExtResource( 11 )
+script = ExtResource( 12 )
 
 [node name="carrot_gold" type="Sprite" parent="carrot_gold_1"]
 position = Vector2( 367.702, -1725.59 )
 scale = Vector2( 1.25122, 1.30147 )
-texture = ExtResource( 12 )
+texture = ExtResource( 13 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="carrot_gold_1"]
 position = Vector2( 375.193, -1729.6 )
@@ -240,38 +277,180 @@ shape = SubResource( 12 )
 
 [node name="bronze_1" type="Area2D" parent="."]
 editor/display_folded = true
-script = ExtResource( 13 )
+script = ExtResource( 14 )
 
 [node name="bronze_2" type="Sprite" parent="bronze_1"]
 position = Vector2( 1093.47, -1317.06 )
 scale = Vector2( 1.57765, 1.31222 )
-texture = ExtResource( 14 )
+texture = ExtResource( 15 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="bronze_1"]
 position = Vector2( 1092.57, -1314.83 )
 shape = SubResource( 13 )
 
 [node name="StaticBody2D9" type="StaticBody2D" parent="."]
-editor/display_folded = true
 
 [node name="ground_sand" type="Sprite" parent="StaticBody2D9"]
 position = Vector2( -231.221, -2013.5 )
-texture = ExtResource( 10 )
+texture = ExtResource( 11 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D9"]
 position = Vector2( -231.692, -2012.8 )
 shape = SubResource( 14 )
+one_way_collision = true
 
 [node name="StaticBody2D10" type="StaticBody2D" parent="."]
 
 [node name="ground_sand" type="Sprite" parent="StaticBody2D10"]
 position = Vector2( 690.776, -2370.29 )
-texture = ExtResource( 10 )
+texture = ExtResource( 11 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D10"]
 position = Vector2( 688.074, -2368.73 )
 shape = SubResource( 15 )
+one_way_collision = true
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+position = Vector2( 754.972, -3085 )
+scale = Vector2( 270.462, 376.132 )
+
+[node name="enemie1" type="Area2D" parent="."]
+editor/display_folded = true
+script = ExtResource( 16 )
+
+[node name="springMan_stand" type="Sprite" parent="enemie1"]
+position = Vector2( 791.649, -2487.8 )
+texture = ExtResource( 17 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemie1"]
+position = Vector2( 792.046, -2482.72 )
+shape = SubResource( 16 )
+
+[node name="StaticBody2D11" type="StaticBody2D" parent="."]
+
+[node name="ground_cake" type="Sprite" parent="StaticBody2D11"]
+position = Vector2( 1265.27, -2697.4 )
+texture = ExtResource( 18 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D11"]
+position = Vector2( 1266.14, -2697.91 )
+shape = SubResource( 17 )
+one_way_collision = true
+
+[node name="StaticBody2D12" type="StaticBody2D" parent="."]
+
+[node name="ground_cake" type="Sprite" parent="StaticBody2D12"]
+position = Vector2( 975.084, -3382.54 )
+texture = ExtResource( 18 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D12"]
+position = Vector2( 973.653, -3383.57 )
+shape = SubResource( 18 )
+one_way_collision = true
+
+[node name="enemie2" type="Area2D" parent="."]
+editor/display_folded = true
+script = ExtResource( 19 )
+
+[node name="flyMan_still_fly" type="Sprite" parent="enemie2"]
+position = Vector2( 974.939, -3515.47 )
+scale = Vector2( 1.18934, 1.1377 )
+texture = ExtResource( 20 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemie2"]
+position = Vector2( 972.583, -3498.25 )
+shape = SubResource( 19 )
+
+[node name="sun" type="StaticBody2D" parent="."]
+editor/display_folded = true
+
+[node name="sun1" type="Sprite" parent="sun"]
+position = Vector2( -400.492, -794.698 )
+scale = Vector2( 1.31955, 1.23352 )
+texture = ExtResource( 21 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sun"]
+position = Vector2( -401.281, -789.391 )
+shape = SubResource( 20 )
+
+[node name="StaticBody2D13" type="StaticBody2D" parent="."]
+
+[node name="ground_snow_broken" type="Sprite" parent="StaticBody2D13"]
+position = Vector2( 1631.78, -3940.8 )
+texture = ExtResource( 22 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D13"]
+position = Vector2( 1631.53, -3940.01 )
+shape = SubResource( 21 )
+one_way_collision = true
+
+[node name="gold" type="Area2D" parent="."]
+editor/display_folded = true
+script = ExtResource( 23 )
+
+[node name="gold_2" type="Sprite" parent="gold"]
+position = Vector2( 1783.18, -4050.92 )
+scale = Vector2( 1.80979, 1.39765 )
+texture = ExtResource( 24 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="gold"]
+position = Vector2( 1785.32, -4052.08 )
+shape = SubResource( 22 )
+
+[node name="StaticBody2D14" type="StaticBody2D" parent="."]
+
+[node name="ground_wood_broken" type="Sprite" parent="StaticBody2D14"]
+position = Vector2( 1381.87, -4588.68 )
+texture = ExtResource( 25 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D14"]
+position = Vector2( 1381.47, -4589.72 )
+shape = SubResource( 23 )
+one_way_collision = true
+
+[node name="enemie3" type="Area2D" parent="."]
+editor/display_folded = true
+script = ExtResource( 26 )
+
+[node name="spikeMan_stand" type="Sprite" parent="enemie3"]
+position = Vector2( 1292.82, -4725.31 )
+scale = Vector2( 1.34343, 1.0997 )
+texture = ExtResource( 27 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemie3"]
+position = Vector2( 1285.71, -4703.66 )
+shape = SubResource( 24 )
+
+[node name="StaticBody2D15" type="StaticBody2D" parent="."]
+
+[node name="ground_wood_broken" type="Sprite" parent="StaticBody2D15"]
+position = Vector2( 679.441, -5035.71 )
+texture = ExtResource( 25 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D15"]
+position = Vector2( 674.296, -5038.57 )
+shape = SubResource( 25 )
+one_way_collision = true
+
+[node name="carrot3" type="Area2D" parent="."]
+editor/display_folded = true
+script = ExtResource( 28 )
+
+[node name="carrot" type="Sprite" parent="carrot3"]
+position = Vector2( 630.332, -5187.41 )
+scale = Vector2( 2.3556, 2.25877 )
+texture = ExtResource( 10 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="carrot3"]
+position = Vector2( 645.428, -5180.47 )
+shape = SubResource( 26 )
 [connection signal="body_entered" from="carrot1" to="carrot1" method="_on_carrot_body_entered"]
 [connection signal="body_entered" from="carrot2" to="carrot2" method="_on_carrot_body_entered"]
 [connection signal="body_entered" from="carrot_gold_1" to="carrot_gold_1" method="_on_carrot_gold_body_entered"]
 [connection signal="body_entered" from="bronze_1" to="bronze_1" method="_on_bronze_1_body_entered"]
+[connection signal="screen_exited" from="VisibilityNotifier2D" to="Player" method="_on_VisibilityNotifier2D_screen_exited"]
+[connection signal="body_entered" from="enemie1" to="enemie1" method="_on_enemie_body_entered"]
+[connection signal="body_entered" from="enemie2" to="enemie2" method="_on_enemie2_body_entered"]
+[connection signal="body_entered" from="gold" to="gold" method="_on_gold_body_entered"]
+[connection signal="body_entered" from="enemie3" to="enemie3" method="_on_enemie3_body_entered"]
+[connection signal="body_entered" from="carrot3" to="carrot3" method="_on_carrot3_body_entered"]
